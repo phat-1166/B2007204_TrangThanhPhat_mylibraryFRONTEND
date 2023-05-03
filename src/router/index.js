@@ -12,6 +12,12 @@ const routes = [
         name: "notfound",
         component: () => import("@/views/NotFound.vue"),
     },
+    {
+        path: "/books/:id",
+        name: "book.edit",
+        component: () => import("@/views/BookEdit.vue"),
+        props: true,
+    },
 ];
 
 const router = createRouter({

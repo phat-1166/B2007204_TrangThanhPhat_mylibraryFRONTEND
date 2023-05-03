@@ -10,7 +10,7 @@
             </h4>
             <BooksList
                 v-if="filteredBooksCount > 0"
-                :contacts="filteredBooks"
+                :books="filteredBooks"
                 v-model:activeIndex="activeIndex"
             />
             <p v-else>Không có quyển sách nào.</p>
@@ -36,6 +36,16 @@
                     <i class="fas fa-address-card"></i>
                 </h4>
                 <BookCard :book="activeBook" />
+                <router-link
+                    :to="{
+                        name: 'book.edit',
+                        params: { id: activeBook._id },
+                    }"
+                >
+                    <span class="mt-2 badge badge-warning">
+                        <i class="fas fa-edit"></i> Hiệu chỉnh</span
+                    >
+                </router-link>
             </div>
         </div>
     </div>
@@ -75,7 +85,7 @@ export default {
                 return [name, content, publisher, language].join("");
             });
         },
-        // Trả về các contact có chứa thông tin cần tìm kiếm.
+        // Trả về các book có chứa thông tin cần tìm kiếm.
         filteredBooks() {
             if (!this.searchText) return this.books;
             return this.books.filter((_books, index) =>
