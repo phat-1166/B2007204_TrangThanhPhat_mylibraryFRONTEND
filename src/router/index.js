@@ -7,6 +7,11 @@ const routes = [
         name: "mylibrary",
         component: MyLibrary,
     },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "notfound",
+        component: () => import("@/views/NotFound.vue"),
+    },
 ];
 
 const router = createRouter({
