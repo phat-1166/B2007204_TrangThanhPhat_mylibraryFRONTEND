@@ -18,6 +18,12 @@ const routes = [
         component: () => import("@/views/BookEdit.vue"),
         props: true,
     },
+    {
+        path: "/add",
+        name: "book.add",
+        component: () => import("@/views/BookAdd.vue"),
+        props: true,
+    },
 ];
 
 const router = createRouter({
