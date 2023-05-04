@@ -5,7 +5,7 @@
             <li class="nav-item">
                 <router-link :to="{ name: 'mylibrary' }" class="nav-link">
                     Sách
-                    <i class="fas fa-address-book"></i>
+                    <i class="fas fa-book-reader"></i>
                 </router-link>
             </li>
         </div>

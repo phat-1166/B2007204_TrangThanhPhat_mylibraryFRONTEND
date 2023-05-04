@@ -1,10 +1,10 @@
 <template>
     <div v-if="book" class="page">
-        <h4>Hiệu chỉnh Liên hệ</h4>
+        <h4>Hiệu chỉnh Sách</h4>
         <BookForm
             :book="book"
             @submit:book="updateBook"
-            @delete:book="deleteCBook"
+            @delete:book="deleteBook"
         />
         <p>{{ message }}</p>
     </div>

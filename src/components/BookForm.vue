@@ -84,10 +84,12 @@ export default {
             name: yup
                 .string()
                 .required("Tên phải có giá trị.")
-                .min(2, "Tên phải ít nhất 2 ký tự.")
-                .max(50, "Tên có nhiều nhất 50 ký tự."),
+                .max(100, "Tên có tối đa 100 ký tự."),
             content: yup.string(),
-            publisher: yup.string().max(100, "Tên NXB có tối đa 100 ký tự."),
+            publisher: yup
+                .string()
+                .required("Tên NXB phải có giá trị.")
+                .max(100, "Tên NXB có tối đa 100 ký tự."),
             language: yup.string(),
         });
         return {

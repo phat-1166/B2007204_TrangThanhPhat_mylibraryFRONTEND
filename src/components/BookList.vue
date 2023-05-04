@@ -1,6 +1,6 @@
 <script>
-    export default {
-        props: {
+export default {
+    props: {
         books: { type: Array, default: [] },
         activeIndex: { type: Number, default: -1 },
     },
@@ -8,9 +8,9 @@
     methods: {
         updateActiveIndex(index) {
             this.$emit("update:activeIndex", index);
-        }
-    }
-    };
+        },
+    },
+};
 </script>
 
 <template>

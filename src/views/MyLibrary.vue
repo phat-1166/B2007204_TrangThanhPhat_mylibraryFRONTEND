@@ -6,9 +6,9 @@
         <div class="mt-3 col-md-6">
             <h4>
                 Sách
-                <i class="fas fa-address-book"></i>
+                <i class="fas fa-book-reader"></i>
             </h4>
-            <BooksList
+            <BookList
                 v-if="filteredBooksCount > 0"
                 :books="filteredBooks"
                 v-model:activeIndex="activeIndex"
@@ -17,7 +17,7 @@
 
             <div class="mt-3 row justify-content-around align-items-center">
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
-                    <i class="fas fa-redo"></i> Làm mới
+                    <i class="fa-solid fa-rotate-right"></i> Làm mới
                 </button>
 
                 <button class="btn btn-sm btn-success" @click="goToAddBook">
@@ -33,7 +33,7 @@
             <div v-if="activeBook">
                 <h4>
                     Chi tiết Sách
-                    <i class="fas fa-address-card"></i>
+                    <i class="fas fa-book-open"></i>
                 </h4>
                 <BookCard :book="activeBook" />
                 <router-link
@@ -108,7 +108,7 @@ export default {
                 console.log(error);
             }
         },
-        refreshList() {
+        async refreshList() {
             this.retrieveBooks();
             this.activeIndex = -1;
         },
@@ -136,5 +136,6 @@ export default {
 .page {
     text-align: left;
     max-width: 750px;
+    margin: 0 auto;
 }
 </style>
